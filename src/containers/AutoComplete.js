@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
 
+import { baseURL } from '../constants';
+
 class AutoComplete extends Component {
 
   state = {
@@ -15,7 +17,7 @@ class AutoComplete extends Component {
   }
 
   onSuggestionsFetchRequested = (e) => {
-    fetch(`http://localhost:5000/api/news/suggestions?searchBy=${e.value}`, {
+    fetch(`${baseURL}/news/suggestions?searchBy=${e.value}`, {
       method: 'GET',
       headers:{
         'Content-Type': 'application/json'

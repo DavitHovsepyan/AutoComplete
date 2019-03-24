@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Article from '../components/Article';
+import { baseURL } from '../constants';
 
 class News extends Component {
 
@@ -15,7 +16,7 @@ class News extends Component {
   }
 
   getNews = (searchText) => {
-    fetch(`http://localhost:5000/api/news?searchBy=${searchText}`, {
+    fetch(`${baseURL}/news?searchBy=${searchText}`, {
       method: 'GET',
       headers:{
         'Content-Type': 'application/json'
