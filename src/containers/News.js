@@ -32,7 +32,7 @@ class News extends Component {
   renderArticles = () => {
     const { articles } = this.state;
 
-    return articles.map(article => <Article article={article}/> )
+    return articles.map(article => <Article article={article} key={article.urlToImage}/> )
   }
 
   render() {

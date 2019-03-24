@@ -24,7 +24,6 @@ class AutoComplete extends Component {
       }
     }).then(res => res.json())
     .then(response => {
-      console.log(response.data)
       this.setState({suggestions: response.data})
     })
     .catch(error => console.error('Error:', error));
